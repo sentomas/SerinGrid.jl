@@ -1,0 +1,25 @@
+# Julia specific files to ignore
+*.jl.cov
+*.jl.cs
+*.jl.mem
+deps/deps.jl
+deps/build.log
+
+# Ignore the Manifest! Packages should only commit Project.toml
+Manifest.toml
+
+# Editor and IDE configurations
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
