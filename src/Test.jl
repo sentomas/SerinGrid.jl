@@ -1,4 +1,18 @@
-using Revise
+#=----------------------------------------------------------------------------
+Script: Test.jl
+Author: Serin Thomas
+Date: 2026-Jul-07
+
+Description: 
+Execution and validation script for the SerinGrid package. This file 
+demonstrates the instantiation of custom SPAREConfig limits, processes 
+historical regional demand data, and outputs the synthesized 3x4 inventory 
+summary matrix to ensure accurate ABC and CV volatility categorization.
+
+License: MIT License
+Copyright (c) 2026 Serin Thomas. All rights reserved.
+See the LICENSE file in the project root for full license information.
+-----------------------------------------------------------------------------=#
 using DataFrames
 using SerinGrid
 

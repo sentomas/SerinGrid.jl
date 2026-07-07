@@ -1,3 +1,18 @@
+#==============================================================================#
+# Module: SerinGrid.jl
+# Author: Serin Thomas
+# Date: 2026-Jul-07
+#
+# Description: 
+# This module implements the SPARE Grid classification system for inventory 
+# management. It categorizes regional machine spare parts based on demand 
+# volatility (CV) and revenue contribution (ABC), providing a 12-grid matrix 
+# designed to feed into predictive forecasting architectures.
+#
+# License: MIT License
+# Copyright (c) 2026 Serin Thomas. All rights reserved.
+# See the LICENSE file in the project root for full license information.
+#==============================================================================#
 module SerinGrid
 
 using DataFrames
