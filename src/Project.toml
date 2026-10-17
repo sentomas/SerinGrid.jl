@@ -1,0 +1,4 @@
+[deps]
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+SerinGrid = "a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d"
+Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"

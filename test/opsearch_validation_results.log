@@ -1,0 +1,38 @@
+====================================================================================
+ SERINGRID.JL v0.2.0 - OPSEARCH JOURNAL VALIDATION LOG
+ Generated: 2026-10-17 13:31:24
+====================================================================================
+
+--- TABLE 1: RAW CV vs. HYBRID BAYESIAN CV & AI/ML ROUTING (48 MONTHS) ---
+5×8 DataFrame
+ Row │ ItemID                           ZeroRatio  CV_Raw   CV       CV_Upper95  SPARE_Grid  BoundaryRisk  RoutedMLModel
+     │ String                           Float64    Float64  Float64  Float64     String      Bool          Symbol
+─────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   1 │ SKU-01 (Fast Filter)                0.0      0.0808   0.0808      0.0808  A-V1               false  LightGBM_SARIMAX
+   2 │ SKU-02 (Mod Valve)                  0.0      0.2858   0.2858      0.2858  A-V2               false  XGBoost_Poisson
+   3 │ SKU-03 (Lumpy Seal)                 0.0      1.1229   1.1229      1.1229  B-V4               false  DeepAR_Quantile_LSTM
+   4 │ SKU-04 (2-in-4Yr Motor - Trap!)     0.9583   4.8466   0.5         1.4142  C-V2                true  MovingAverage_SafetyStock
+   5 │ SKU-05 (Sporadic Burst)             0.9792   6.9282   0.2425      0.3348  C-V2               false  MovingAverage_SafetyStock
+
+
+--- TABLE 2: 3x4 DYNAMIC SPARE GRID SUMMARY ---
+3×5 DataFrame
+ Row │ ABC_Class  V1 (CV <= 0.2)  V2 (CV <= 0.5)  V3 (CV <= 1.0)  V4 (CV > 1.0)
+     │ String     Int64           Int64           Int64           Int64
+─────┼──────────────────────────────────────────────────────────────────────────
+   1 │ A                       1               1               0              0
+   2 │ B                       0               0               0              1
+   3 │ C                       0               2               0              0
+
+
+--- TABLE 3: AI/ML FEATURE MATRIX EXPORT (export_ml_features) ---
+5×10 DataFrame
+ Row │ ItemID                           LogRevenue  MeanDemand  ZeroRatio  HybridBayesianCV  CV_Upper95  BoundaryRiskInt  ABC_Encoded  V_Encoded  TargetMLRoute
+     │ String                           Float64     Float64     Float64    Float64           Float64     Int64            Int64        Int64      Symbol
+─────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   1 │ SKU-01 (Fast Filter)                13.017      50.0        0.0               0.0808      0.0808                0            3          1  LightGBM_SARIMAX
+   2 │ SKU-02 (Mod Valve)                  12.4292     20.0        0.0               0.2858      0.2858                0            3          2  XGBoost_Poisson
+   3 │ SKU-03 (Lumpy Seal)                 11.9184      4.6667     0.0               1.1229      1.1229                0            2          4  DeepAR_Quantile_LSTM
+   4 │ SKU-04 (2-in-4Yr Motor - Trap!)     11.6953      0.0417     0.9583            0.5         1.4142                1            1          2  MovingAverage_SafetyStock
+   5 │ SKU-05 (Sporadic Burst)             10.309       0.3125     0.9792            0.2425      0.3348                0            1          2  MovingAverage_SafetyStock
+
